@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    justify-content: start;
+    height: 3.5rem;   
+    gap: 2rem;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--color-beige);
+    color: var(--color-brown);
+    top: 0;
+    z-index: 5;
+}
+
+header .available-books {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header .available-books h3 {
+    font-weight: 400;
+}
+
+header h1 {
+    font-weight: lighter;
+}
