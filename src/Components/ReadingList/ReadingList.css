@@ -1,0 +1,42 @@
+.btn-readingList {
+    position: absolute;
+    right: 4.5rem;
+    top: 0;
+    outline: none;
+    z-index: 4;
+}
+
+.btn-readingList svg {
+    height: 70px;
+    scale: 1.6;    
+    padding: 0;
+    margin: 0;
+}
+
+.readingList {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(180px,1fr));
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 3.5rem);
+    background-color: #62372dcc;   
+    transform: translateY(100%);
+    z-index: 3;
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    transition: clip-path 1s;
+    padding: 3rem 1.5rem;
+    gap: 1.2rem;
+}
+
+.readingList.active {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.btn-readingList span {
+    position: absolute;
+    top: .5rem;
+    right: .1rem;
+    color: var(--color-beige);    
+    font-family: "DM Serif Display", serif; 
+}

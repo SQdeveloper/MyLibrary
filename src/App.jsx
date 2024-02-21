@@ -1,4 +1,5 @@
 import './App.css'
+import Books from './Components/Books/Books';
 import Header from './Components/Header/Header'
 import Hero from './Components/Hero/Hero'
 import ReadingListContextProvider from './Context/ReadingListContext';
@@ -10,8 +11,9 @@ function App() {
   return (
     <>      
       <ReadingListContextProvider>
-        <Header amountBooks={books.length}/>
+        <Header/>
         {books.length > 0 && <Hero books={books}/>}
+        <Books books={books}/>
       </ReadingListContextProvider>
     </>
   )

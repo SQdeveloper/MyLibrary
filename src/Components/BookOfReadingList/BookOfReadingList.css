@@ -1,0 +1,20 @@
+.bookOfList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    border-radius: .5rem;
+    background-color: #ffffff80;
+    padding: 1.2rem 0 .8rem;
+    height: fit-content;
+    text-align: center;    
+}
+
+.bookOfList-img {
+    height: 13rem;
+    border-radius: .3rem;
+}
+
+.bookOfList-title {
+    font-weight: lighter;    
+}

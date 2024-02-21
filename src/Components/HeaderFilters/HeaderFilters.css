@@ -1,0 +1,21 @@
+.headerFilters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-beige);
+    padding: 1rem 2rem;    
+}
+
+.headerFilters-filter {
+    display: flex;
+    gap: 1rem;
+}
+
+.headerFilters-filter-name, .headerFilters-filter span {
+    font-weight: lighter;
+    font-size: 1.1rem;
+}
+
+.headerFilters-pagesMin::-webkit-progress-bar {
+    background-color: aqua;
+}
