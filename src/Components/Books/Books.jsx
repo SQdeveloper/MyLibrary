@@ -1,7 +1,7 @@
 import React from 'react';
-import './Books.css';
 import Book from '../Book/Book';
 import HeaderFilters from '../HeaderFilters/HeaderFilters';
+import './Books.css';
 
 const Books = ({books}) => {
     return (

@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { ReadingListContext } from '../../Context/ReadingListContext';
 import './Book.css';
 
 const Book = ({book}) => {
+    const {readingList, setReadingList} = useContext(ReadingListContext);
+    const isRepeatedBook = readingList.findIndex(bookOfList=> bookOfList.book.ISBN == book.book.ISBN) >= 0 ? true : false;
+    const [bookIsSaved, setBookIsSaved] = useState(isRepeatedBook);        
+
+    const removeToReadingList = ()=>{
+        const newList = [...readingList];
+        const index = readingList.findIndex(bookOfList=> bookOfList.book.ISBN == book.book.ISBN);
+        newList.splice(index,1);
+        setReadingList(newList);
+
+        setBookIsSaved(false)
+    }
+    
+    const addToReadingList = ()=>{                
+        if(isRepeatedBook) return;
+        const newList = [...readingList];
+        newList.push(book)
+        setReadingList(newList);                
+
+        setBookIsSaved(true)
+    }        
+
     return (
         <li className='book'>
             <img className='book-img' src={book.book.cover} alt="book-image" />
@@ -15,7 +38,11 @@ const Book = ({book}) => {
                     </div>
                     <p>{book.book.synopsis}</p>
                 </div>
-                <button className="book-btn-addToList">Add to List</button>
+                {bookIsSaved ? 
+                    <button onClick={removeToReadingList} className="book-btn-addToList">Remove to List</button>
+                    :
+                    <button onClick={addToReadingList} className="book-btn-addToList">Add to List</button>
+                }
             </div>
         </li>
     );

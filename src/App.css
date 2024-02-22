@@ -8,7 +8,9 @@
 }
 
 #root {  
+  display: flex;
+  flex-direction: column;
   width: 100%;  
   font-family: "DM Serif Display", serif;  
-  background-color: #F9F3ED;
+  background-color: #F9F3ED;  
 }

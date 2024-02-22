@@ -6,11 +6,29 @@
     z-index: 4;
 }
 
+.btn-readingList:hover > svg {
+    scale: 1.9;
+}
+
 .btn-readingList svg {
+    transition: scale .6s;
     height: 70px;
     scale: 1.6;    
     padding: 0;
     margin: 0;
+}
+
+.btn-readingList svg.active {
+    animation: bounce .8s;
+}
+
+@keyframes bounce {
+    0% {
+        scale: 1.9
+    }
+    100% {
+        scale: 1.6
+    }
 }
 
 .readingList {
@@ -27,6 +45,12 @@
     transition: clip-path 1s;
     padding: 3rem 1.5rem;
     gap: 1.2rem;
+    overflow-y: scroll;
+    max-width: 240px;
+}
+
+.readingList::-webkit-scrollbar {
+    display: none;
 }
 
 .readingList.active {

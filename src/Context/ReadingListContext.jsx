@@ -4,7 +4,7 @@ import useLocalStorage from '../Hooks/useLocalStorage';
 export const ReadingListContext = createContext(null);
 
 const ReadingListContextProvider = (props)=>{    
-    const [readingList, setReadingList] = useLocalStorage('readingList', [{book: {title: 'jeffe'}}]);
+    const [readingList, setReadingList] = useLocalStorage('readingList', []);
     const contextValue = {readingList, setReadingList};
 
     return(
