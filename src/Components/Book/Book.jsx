@@ -4,25 +4,25 @@ import './Book.css';
 
 const Book = ({book}) => {
     const {readingList, setReadingList} = useContext(ReadingListContext);
-    const isRepeatedBook = readingList.findIndex(bookOfList=> bookOfList.book.ISBN == book.book.ISBN) >= 0 ? true : false;
-    const [bookIsSaved, setBookIsSaved] = useState(isRepeatedBook);        
+    const [isBookListed, setIsBookListed] = useState(null);
+
+    useEffect(()=>{
+        setIsBookListed(readingList.some(bookOfList=> bookOfList.book.ISBN == book.book.ISBN));
+    }, [readingList]);
 
     const removeToReadingList = ()=>{
         const newList = [...readingList];
         const index = readingList.findIndex(bookOfList=> bookOfList.book.ISBN == book.book.ISBN);
         newList.splice(index,1);
-        setReadingList(newList);
-
-        setBookIsSaved(false)
+        setReadingList(newList);        
     }
     
     const addToReadingList = ()=>{                
-        if(isRepeatedBook) return;
+        if(isBookListed) return;
+        
         const newList = [...readingList];
         newList.push(book)
-        setReadingList(newList);                
-
-        setBookIsSaved(true)
+        setReadingList(newList);                                 
     }        
 
     return (
@@ -38,7 +38,7 @@ const Book = ({book}) => {
                     </div>
                     <p>{book.book.synopsis}</p>
                 </div>
-                {bookIsSaved ? 
+                { isBookListed ? 
                     <button onClick={removeToReadingList} className="book-btn-addToList">Remove to List</button>
                     :
                     <button onClick={addToReadingList} className="book-btn-addToList">Add to List</button>

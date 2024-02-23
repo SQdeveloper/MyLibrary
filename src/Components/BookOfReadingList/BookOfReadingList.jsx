@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import './BookOfReadingList.css';
 import { ReadingListContext } from '../../Context/ReadingListContext';
+import './BookOfReadingList.css';
 
 const BookOfReadingList = ({book}) => {
     const {readingList, setReadingList} = useContext(ReadingListContext);
@@ -9,7 +9,7 @@ const BookOfReadingList = ({book}) => {
         const newList = [...readingList];
         const index = readingList.findIndex(bookOfList=> bookOfList.book.ISBN == book.ISBN);
         newList.splice(index,1);
-        setReadingList(newList);        
+        setReadingList(newList);                
     }
 
     return (

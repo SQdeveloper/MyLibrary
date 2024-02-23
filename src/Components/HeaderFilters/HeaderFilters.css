@@ -8,7 +8,11 @@
 
 .headerFilters-filter {
     display: flex;
-    gap: 1rem;
+    gap: 1rem;    
+}
+
+.headerFilters-filter h3, .headerFilters span {
+    text-wrap: nowrap;
 }
 
 .headerFilters-filter-name, .headerFilters-filter span {
@@ -16,6 +20,40 @@
     font-size: 1.1rem;
 }
 
-.headerFilters-pagesMin::-webkit-progress-bar {
-    background-color: aqua;
+.headerFilters-search input {
+    height: 1.5rem;
+    border: none;
+    padding: 0 .4rem;
+    font-family: "Nunito", sans-serif;
+    width: 14rem;
+}
+
+.headerFilters-search {
+    display: flex;
+    overflow: hidden;    
+    border: 1px solid var(--color-brown);
+    border-radius: .2rem;
+}
+
+.headerFilters-search-svg {
+    height: 1.5rem;
+    background-color: rgb(134, 26, 26);
+    padding: .1rem;
+}
+
+.headerFilters-filter-genre {
+    border: 1px solid var(--color-brown);
+    border-radius: .2rem;
+    font-family: "Nunito", sans-serif;
+    outline: none;
+}
+
+/* Modificiaciones para el slider component */
+.headerFilters-filter .css-7d61z1-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
+    display: none;
+}
+
+.headerFilters-filter .css-187mznn-MuiSlider-root {
+    width: 10rem;
+    color: rgb(90, 17, 17);
 }

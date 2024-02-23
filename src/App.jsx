@@ -13,7 +13,7 @@ function App() {
       <ReadingListContextProvider>
         <Header/>
         {books.length > 0 && <Hero books={books}/>}
-        <Books books={books}/>
+        {books.length > 0 && <Books books={books}/>}        
       </ReadingListContextProvider>
     </>
   )
