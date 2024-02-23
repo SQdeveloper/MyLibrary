@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Slider } from '@mui/material';
 import { ReadingListContext } from '../../Context/ReadingListContext';
 import useFilters from '../../Hooks/useFilters';
+import HighestNumberOfPages from '../Utils/HighestNumberOfPages';
 import './HeaderFilters.css';
 
 const HeaderFilters = ({books}) => {
     const [minPages, setMinPages] = useState(0);    
-    const [filters, setFilters] = useState({search: '', minPages: 0, genre: 'all'});
-    const {filteredBooks, setFilteredBooks} = useContext(ReadingListContext);        
+    const [filters, setFilters] = useState({search: '', minPages: 0, genre: 'All'});
+    const {setFilteredBooks} = useContext(ReadingListContext);        
+    const maxPage = HighestNumberOfPages(books);    
 
     useEffect(()=>{
         const newFiltereBooks = useFilters(filters, books);
@@ -29,10 +31,11 @@ const HeaderFilters = ({books}) => {
 
         changeValue(e);
     }
-    const applyFiltersGenre = (e)=>{
-        // const newFilters = filters;
-        // console.log(e)
-        // newFilters.search = e.target.value;
+    const applyFiltersGenre = (e)=>{        
+        setFilters(prevFilters=>({
+            ...prevFilters,
+            genre: e.target.value
+        }))        
     }
     
     const changeValue = (e)=>{
@@ -50,7 +53,7 @@ const HeaderFilters = ({books}) => {
            </li>
            <li className="headerFilters-filter">
                 <h3 className='headerFilters-filter-name'>Min Pages:</h3>                
-                <Slider defaultValue={0} max={1000} onChange={applyFiltersMinPages} aria-label="Default" valueLabelDisplay="auto" />
+                <Slider defaultValue={0} max={maxPage} onChange={applyFiltersMinPages} aria-label="Default" valueLabelDisplay="auto" />
                 <span>{minPages} pags.</span>
            </li>
            <li className="headerFilters-filter">

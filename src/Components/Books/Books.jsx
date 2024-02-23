@@ -10,10 +10,12 @@ const Books = ({books}) => {
     return (
         <section className='books'>
             <HeaderFilters books={books}/>
-            <ul className="content-books">
-                {filteredBooks.map(book=>(
-                    <Book key={book.book.ISBN} book={book}/>
-                ))}
+            <ul className="content-books">                
+                {
+                    filteredBooks.map(book=>(
+                        <Book key={book.book.ISBN} book={book}/>
+                    ))
+                }
             </ul>
         </section>
     );
