@@ -64,3 +64,15 @@
     color: var(--color-beige);    
     font-family: "DM Serif Display", serif; 
 }
+
+@media (max-width: 770px) {
+    .btn-readingList {
+        right: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .btn-readingList {
+        font-size: .8rem;
+    }
+}

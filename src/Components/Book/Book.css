@@ -66,4 +66,11 @@
 .book-img {
     width: 50%;
     border-radius: .3rem;    
+    max-height: 20rem;
+}
+
+@media (max-width: 560px) {
+    .book-img {
+        height: 15rem;
+    }
 }

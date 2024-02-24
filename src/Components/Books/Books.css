@@ -3,6 +3,7 @@
     border-radius: 1rem;
     overflow: hidden;
     background-color: white;    
+    max-width: 1420px;
 }
 
 .content-books {
@@ -10,4 +11,16 @@
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 1rem;
     padding: 1.5rem 1rem;
+}
+
+@media (min-width: 1490px) {
+    .books {
+        margin: 3rem auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .books {
+        margin: 2rem 1rem;
+    }
 }

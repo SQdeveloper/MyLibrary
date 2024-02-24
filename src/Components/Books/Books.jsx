@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Book from '../Book/Book';
 import HeaderFilters from '../HeaderFilters/HeaderFilters';
-import './Books.css';
 import { ReadingListContext } from '../../Context/ReadingListContext';
+import Book from '../Book/Book';
+import './Books.css';
 
 const Books = ({books}) => {
     const {filteredBooks} = useContext(ReadingListContext);        

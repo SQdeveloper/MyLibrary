@@ -4,11 +4,14 @@
     align-items: center;
     background-color: var(--color-beige);
     padding: 1rem 2rem;    
+    flex-wrap: wrap;
+    gap: 1rem;    
 }
 
 .headerFilters-filter {
     display: flex;
     gap: 1rem;    
+    align-items: center;
 }
 
 .headerFilters-filter h3, .headerFilters span {
@@ -56,4 +59,10 @@
 .headerFilters-filter .css-187mznn-MuiSlider-root {
     width: 10rem;
     color: rgb(90, 17, 17);
+}
+
+@media (max-width: 930px) {
+    .headerFilters {
+        justify-content: center;
+    }
 }
