@@ -31,8 +31,8 @@
     filter: invert(96%) sepia(7%) saturate(1575%) hue-rotate(312deg) brightness(97%) contrast(88%);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 455px) {
     .footer {
-        /* justify-content: center; */
+        flex-direction: column;
     }   
 }

@@ -9,7 +9,15 @@
     padding: 1.2rem 0 .8rem;
     height: fit-content;
     text-align: center;    
+}
+
+.bookOfList.animating {
     animation: appear 1s;
+}
+
+.bookOfList.animatingReverse {
+    animation: appearReverse 1s;
+    /* animation-fill-mode: forwards; */
 }
 
 @keyframes appear {
@@ -18,6 +26,17 @@
         opacity: 0;
     }
     to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes appearReverse {
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    from {
         transform: none;
         opacity: 1;
     }
@@ -38,8 +57,18 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: red;
-    border-radius: 50%;
+    background-color: #784134;
+    border-radius: .1rem;
+    transform: translate(35%, -40%);
     width: 20px;
     height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookOfList-btn-remove img {
+    filter: invert(100%);
+    width: 1.3rem;
+    height: 1.3rem;    
 }

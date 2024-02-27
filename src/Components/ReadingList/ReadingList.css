@@ -46,7 +46,7 @@
     padding: 3rem 1.5rem;
     gap: 1.2rem;
     overflow-y: scroll;
-    max-width: 240px;
+    max-width: 240px;    
 }
 
 .readingList::-webkit-scrollbar {

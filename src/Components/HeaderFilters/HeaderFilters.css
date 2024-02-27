@@ -23,6 +23,10 @@
     font-size: 1.1rem;
 }
 
+.headerFilters-filter-minPages {
+    width: 14rem;
+}
+
 .headerFilters-search input {
     height: 1.5rem;
     border: none;
@@ -51,18 +55,19 @@
     outline: none;
 }
 
-/* Modificiaciones para el slider component */
-.headerFilters-filter .css-7d61z1-MuiSlider-valueLabel.MuiSlider-valueLabelOpen {
-    display: none;
-}
-
-.headerFilters-filter .css-187mznn-MuiSlider-root {
-    width: 10rem;
-    color: rgb(90, 17, 17);
+:root {
+    accent-color:#5a1111;
 }
 
 @media (max-width: 930px) {
     .headerFilters {
         justify-content: center;
+    }
+}
+
+
+@media (max-width: 440px) {
+    .headerFilters-filter-minPages {
+        width: 10rem;
     }
 }

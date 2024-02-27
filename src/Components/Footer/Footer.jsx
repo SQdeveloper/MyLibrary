@@ -10,8 +10,8 @@ const Footer = () => {
             </div>
             <div className="footer-center">Developed by Jefferson Silva</div>
             <div className="footer-right">
-                <a target='_blank' href="https://github.com/SQdeveloper"><img src="../src/assets/github.png" alt="github"/></a>
-                <a target='_blank' href="https://www.linkedin.com/in/sqdeveloper/"><img src="../src/assets/linkedin.png" alt="github"/></a>
+                <a target='_blank' href="https://github.com/SQdeveloper"><img src="/github.png" alt="github"/></a>
+                <a target='_blank' href="https://www.linkedin.com/in/sqdeveloper/"><img src="/linkedin.png" alt="github"/></a>
             </div>
         </footer>
     );

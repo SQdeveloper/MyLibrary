@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Slider } from '@mui/material';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { ReadingListContext } from '../../Context/ReadingListContext';
 import useFilters from '../../Hooks/useFilters';
 import HighestNumberOfPages from '../Utils/HighestNumberOfPages';
+import debounce from 'just-debounce-it';
 import './HeaderFilters.css';
 
 const HeaderFilters = ({books}) => {
@@ -16,21 +16,21 @@ const HeaderFilters = ({books}) => {
         setFilteredBooks(newFiltereBooks);        
     }, [filters])
     
-    const applyFiltersSearch = (e)=>{
+    const applyFiltersSearch = debounce((e)=>{        
         setFilters(prevFilters=>(
             {...prevFilters,
                 search: e.target.value
             }
         ))                        
-    }
-    const applyFiltersMinPages = (e)=>{                
+    }, 300);
+
+    const applyFiltersMinPages = useCallback(debounce((e)=>{                                        
         setFilters(prevFilters=>({
             ...prevFilters,
             minPages: e.target.value
-        })); 
+        }))
+    }, 200), []);
 
-        changeValue(e);
-    }
     const applyFiltersGenre = (e)=>{        
         setFilters(prevFilters=>({
             ...prevFilters,
@@ -52,8 +52,8 @@ const HeaderFilters = ({books}) => {
                 </div>
            </li>
            <li className="headerFilters-filter">
-                <h3 className='headerFilters-filter-name'>Min Pages:</h3>                
-                <Slider defaultValue={0} max={maxPage} onChange={applyFiltersMinPages} aria-label="Default" valueLabelDisplay="auto" />
+                <h3 className='headerFilters-filter-name'>Min Pages:</h3>                                
+                <input onChange={(e)=>{applyFiltersMinPages(e);changeValue(e);}} className='headerFilters-filter-minPages' value={minPages}  max={maxPage} type='range'/>
                 <span>{minPages} pags.</span>
            </li>
            <li className="headerFilters-filter">

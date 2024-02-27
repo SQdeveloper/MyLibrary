@@ -4,6 +4,9 @@
     overflow: hidden;
     background-color: white;    
     max-width: 1420px;
+    -webkit-box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.21);
+    box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.21);
 }
 
 .content-books {

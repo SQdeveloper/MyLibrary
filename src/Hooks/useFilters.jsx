@@ -1,7 +1,7 @@
 import React from 'react';
 import { Genres } from '../Components/Genres/Genres';
 
-const useFilters = (filters, books) => {       
+const useFilters = (filters, books) => {         
     return books.filter(book=>{
      return (book.book.pages >= filters.minPages && 
         (

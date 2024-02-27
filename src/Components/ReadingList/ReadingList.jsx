@@ -4,8 +4,8 @@ import BookOfReadingList from '../BookOfReadingList/BookOfReadingList';
 import './ReadingList.css';
 
 const ReadingList = () => {
-    const {readingList} = useContext(ReadingListContext);
-    
+    const {readingList} = useContext(ReadingListContext);    
+
     const activeAnimation = ()=>{
         const ulReadingList = document.querySelector('.readingList');
         ulReadingList.classList.toggle('active');
@@ -18,7 +18,7 @@ const ReadingList = () => {
         setTimeout(()=>{
             buttonReadingList.classList.remove('active');
         }, 800)
-    }, [readingList]);
+    }, [readingList]);    
 
     return (
         <>
@@ -28,8 +28,8 @@ const ReadingList = () => {
             </button>
             <ul className='readingList'>
                 {readingList.length > 0 && 
-                    readingList.map((book)=>(
-                        <BookOfReadingList key={book.book.ISBN} book={book.book}/>
+                    readingList.map((book,index)=>(
+                        <BookOfReadingList key={book.book.ISBN} i={index} book={book.book}/>
                 ))}
             </ul>
         </>

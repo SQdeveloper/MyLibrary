@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useFetch from './useFetch';
+import {library} from '../DB/books.json';
 
 const useBooks = () => {
     const [books, setBooks] = useState([]);
@@ -9,7 +9,7 @@ const useBooks = () => {
     }, []);
 
     const getBooks = async ()=>{
-        const newBooks = await useFetch();
+        const newBooks = library;
         setBooks(newBooks);
     }
 
