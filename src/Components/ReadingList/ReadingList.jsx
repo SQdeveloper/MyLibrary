@@ -27,10 +27,15 @@ const ReadingList = () => {
                 <span>Reading List <br></br> {readingList.length}</span>
             </button>
             <ul className='readingList'>
-                {readingList.length > 0 && 
+                {readingList.length > 0 ? 
                     readingList.map((book,index)=>(
                         <BookOfReadingList key={book.book.ISBN} i={index} book={book.book}/>
-                ))}
+                    ))
+                    :
+                    <div className='readingList-message-error'>
+                        <h3>There aren't books stored</h3>
+                    </div>
+            }
             </ul>
         </>
     );

@@ -16,6 +16,21 @@
     padding: 1.5rem 1rem;
 }
 
+.books-message-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.books-message-error h3 {
+    color: var(--color-brown);
+    font-weight: lighter;
+    font-size: 1.3rem;
+}
+
 @media (min-width: 1490px) {
     .books {
         margin: 3rem auto;
